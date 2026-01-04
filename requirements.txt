@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+numpy
+scipy
+pydub
+python-multipart
+pyaudioop; python_version >= '3.13'
