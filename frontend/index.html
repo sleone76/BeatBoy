@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeatBoy | Tech Cafe Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container expanded">
+        <header>
+            <img src="logo.png" alt="Tech Cafe Logo" class="logo-img">
+            <div>
+                <h1>BeatBoy <span class="badge">PRO</span></h1>
+                <p class="subtitle">AI Powered Music Synthesis by sleone</p>
+            </div>
+        </header>
+
+        <main>
+            <!-- TOP CONTROLS -->
+            <div class="top-controls">
+                <div class="input-group bpm-group">
+                    <label for="bpm">Tempo (BPM)</label>
+                    <div class="bpm-controls">
+                        <input type="number" id="bpm" value="110" min="40" max="240">
+                        <input type="range" id="bpmSlider" value="110" min="40" max="240">
+                    </div>
+                </div>
+                <button id="generateBtn" class="btn-primary">
+                    <span class="btn-text">Generate Track</span>
+                    <div class="loader" id="loader"></div>
+                </button>
+            </div>
+
+            <!-- INSTRUMENT GRID -->
+            <div class="instrument-section">
+                <!-- KEYS -->
+                <div class="category-title">Keys & Pianos</div>
+                <div class="grid-row">
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="grand_piano">
+                        <div class="card-content">Grand Piano</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="e_piano" checked>
+                        <div class="card-content">E-Piano</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="organ">
+                        <div class="card-content">Soul Organ</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="vibraphone">
+                        <div class="card-content">Vibraphone</div>
+                    </label>
+                </div>
+
+                <!-- GUITARS -->
+                <div class="category-title">Guitars & Bass</div>
+                <div class="grid-row">
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="acoustic_guitar">
+                        <div class="card-content">Acoustic Gtr</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="electric_guitar">
+                        <div class="card-content">Electric Gtr</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="distorted_guitar">
+                        <div class="card-content">Distorted Gtr</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="bass_guitar">
+                        <div class="card-content">Precision Bass</div>
+                    </label>
+                </div>
+
+                <!-- STRINGS -->
+                <div class="category-title">Orchestra</div>
+                <div class="grid-row">
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="violin">
+                        <div class="card-content">Solo Violin</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="cello">
+                        <div class="card-content">Deep Cello</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="pizzicato">
+                        <div class="card-content">Pizzicato</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="harp">
+                        <div class="card-content">Concert Harp</div>
+                    </label>
+                </div>
+
+                <!-- WINDS -->
+                <div class="category-title">Winds & Brass</div>
+                <div class="grid-row">
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="flute">
+                        <div class="card-content">Flute</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="saxophone">
+                        <div class="card-content">Saxophone</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="trumpet">
+                        <div class="card-content">Trumpet</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="brass_section">
+                        <div class="card-content">Brass Section</div>
+                    </label>
+                </div>
+
+                <!-- SYNTHS -->
+                <div class="category-title">Synthesizers</div>
+                <div class="grid-row">
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="classic_synth">
+                        <div class="card-content">Classic Saw</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="chiptune">
+                        <div class="card-content">8-Bit Arcade</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="sci_fi">
+                        <div class="card-content">Sci-Fi FX</div>
+                    </label>
+                    <label class="inst-card">
+                        <input type="checkbox" name="instrument" value="80s_pad">
+                        <div class="card-content">Retro Pad</div>
+                    </label>
+                </div>
+            </div>
+
+            <div class="player-container" id="playerContainer">
+                <div class="piano-container" id="piano"></div>
+                <audio id="audioPlayer" controls></audio>
+                <div>
+                    <a id="downloadLink" class="download-link" href="#" download="beat.wav">⬇ Download .WAV</a>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
