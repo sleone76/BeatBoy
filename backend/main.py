@@ -3,9 +3,17 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse, FileResponse
 from pydantic import BaseModel
-import beat_generator
 import base64
 import os
+import sys
+
+# START FIX: Ensure backend dir is in path so we can import beat_generator
+current_dir = os.path.dirname(os.path.abspath(__file__))
+if current_dir not in sys.path:
+    sys.path.append(current_dir)
+# END FIX
+
+import beat_generator
 
 app = FastAPI()
 
